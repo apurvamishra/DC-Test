@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  productID: MyString
+  category: MyString
+  product_name: MyString
+  price: 9.99
+
+two:
+  productID: MyString
+  category: MyString
+  product_name: MyString
+  price: 9.99
+
+ruby:
+  productID: C1
+  category: Cameras
+  product_name: Sony
+  price: 9.99
