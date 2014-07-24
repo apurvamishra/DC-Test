@@ -1,4 +1,4 @@
- require 'CSV' #This class provides a complete interface to CSV files and data
+require 'CSV' #This class provides a complete interface to CSV files and data
 
 class Product < ActiveRecord::Base
 	
@@ -9,12 +9,15 @@ class Product < ActiveRecord::Base
 	validates :product_name, :uniqueness => true
 
 
-
-	Product.delete_all
-	CSV.foreach('C:\Users\Apurva\Desktop\products.csv', :headers => true) do |row|
-	  	Product.create!(row.to_hash)
+	def self.import(file)
+	 	Product.delete_all
+	 	CSV.foreach(file.path, headers: true) do |row|
+	    Product.create!(row.to_hash)
+	  	end
 	end
-	
+
+
+
 	
 
 

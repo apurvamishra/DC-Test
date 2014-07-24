@@ -40,6 +40,11 @@
   background:   #f8b0f8;
 }
 
+#product_list p {
+  background:   #f8b0f8;
+  border-bottom: 2px solid;
+        color: #282;
+}
 /* An entry in the store catalog */
 
 #store  .entry {

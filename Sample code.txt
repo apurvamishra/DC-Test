@@ -1,0 +1,79 @@
+
+  def csv_path
+    @data_hash = params[:importer]
+    @importer = Product.new
+    @data = @importer.csv_import(@data_hash[:import])
+  end
+
+<p>
+		<% f.label :upload %> Select File : 
+		<%= f.field 'upload', 'datafile' %>
+	</p>
+
+	<%= submit_tag "Upload" %>
+  <%= end %>
+
+
+
+    <%= form_tag :action => 'uploadFile',:multipart => true%>
+		<%= label_tag :file %>
+	  	<%= file_field_tag :file %>
+	
+	
+	  	<%= submit_tag 'Upload' %>
+	
+	<%= end_form_tag %>
+	
+<p>
+		<% f.label :upload %> Select File : 
+		<%= f.field 'upload', 'datafile' %>
+	</p>
+
+	<%= submit_tag "Upload" %>
+  <%= end %>
+
+  <%= form_tag do %>
+  
+
+
+
+  <%= f.submit %>
+  <% end %>
+
+
+  working 
+
+  <h1>File Upload</h1>
+	  <%= form_tag({action: :uploadfile}, multipart: true) do %>
+	  <p> Select File :
+	  <%= file_field_tag 'Upload' %>
+	  </p>
+	  <%= submit_tag "Upload" %>
+
+<% end %>
+
+header from upload controller
+  def index
+     render :file => 'app\views\upload\uploadfile.html.erb'
+  end
+
+  working delete and static upload
+
+  	def csv_import(data)
+		if data==3
+			Product.delete_all
+			CSV.foreach('C:\Users\Apurva\Desktop\products.csv', :headers => true) do |row|
+			  	Product.create!(row.to_hash)
+			end
+		end
+	end
+
+Half working
+	<h1>File Upload</h1>
+    <%= form_tag(method: :upload, multipart: true) do %>
+    <p> File to Upload:<%= file_field_tag  'file' %>
+    </p>
+    <div class="actions">
+    <%= submit_tag "Up Load" %>
+    </div>
+<% end %>

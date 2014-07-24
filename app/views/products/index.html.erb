@@ -33,13 +33,24 @@
     <% end %>
   </tbody>
 </table>
-</div>
+
 <br>
+
+<p> </p>
+</div>
 
 <h1>Manage Database</h1>
   <%= link_to 'New Product', new_product_path %>
   <br>
-  <%= link_to 'Import Product Data'%>
+  <h2>File Upload</h2>
+    <%= form_tag import_products_path, multipart: true do %>
+      <p> File to Upload:<%= file_field_tag :file %></p>
+      <%= submit_tag "Import CSV" %>
+<% end %>
 
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 

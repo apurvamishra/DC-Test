@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /products
   # GET /products.json
@@ -15,6 +16,16 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+  end
+
+  # Passing file attributes from the browser for importing CSV -- No Validations implemented yet :-(, Has to be perfect file.
+  def import
+    begin
+      Product.import(params[:file])
+      redirect_to root_url, notice: "Post successfully created"
+    rescue
+      redirect_to root_url, notice: "Invalid CSV file format."
+    end
   end
 
   # GET /products/1/edit
