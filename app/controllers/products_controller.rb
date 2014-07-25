@@ -6,6 +6,37 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @category = Product.select(:category).distinct
+   end
+
+   #Complete product listing
+   def complete
+    @products = Product.all
+  end
+
+  # Audio Product listing
+  def audio
+    @audio = Product.where('category'=> 'Audio')
+  end
+
+  # Cameras Product listing
+  def cameras
+    @cameras = Product.where('category'=> 'Cameras')
+  end
+
+ # Cameras Product listing first 5
+  def computers
+    @computers = Product.where('category'=> 'Computers and Tablets').limit(5)
+  end
+
+   # Cameras Product listing offset from 6 
+  def computersoffset
+    @computersoffset = Product.where('category'=> 'Computers and Tablets').offset(5)
+  end
+
+   # Cameras Product listing
+  def whitegoods
+    @whitegoods = Product.where('category'=> 'WhiteGoods')
   end
 
   # GET /products/1
@@ -22,9 +53,9 @@ class ProductsController < ApplicationController
   def import
     begin
       Product.import(params[:file])
-      redirect_to root_url, notice: "Post successfully created"
+      redirect_to root_url, notice: "Product data successfully uploaded"
     rescue
-      redirect_to root_url, notice: "Invalid CSV file format."
+      redirect_to root_url, notice: "Invalid CSV file format, purging data"
     end
   end
 

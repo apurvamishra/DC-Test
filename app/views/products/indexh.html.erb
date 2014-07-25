@@ -10,31 +10,25 @@
 <table>
   <thead>
     <tr>
-      
+      <th>Product ID</th>
       <th>Category</th>
+      <th>Product Name</th>
+      <th>Price</th>
       <th colspan="6"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @category.each do |category| %>
+    <% @products.each do |product| %>
       <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        
-        <td><%= category.category %></td>
-        
+        <td><%= product.productID %></td>
+        <td><%= product.category %></td>
+        <td><%= product.product_name %></td>
+        <td><%= product.price %></td>
         <td class="list_actions" >
-          <% if category.category=="Audio" %>
-           <%= link_to 'Show', :action => "audio" %> 
-          <% end %>
-          <% if category.category=="Cameras" %>
-           <%= link_to 'Show', :action => "cameras" %> 
-          <% end %>
-          <% if category.category=="Computers and Tablets" %>
-           <%= link_to 'Show', :action => "computers" %> 
-          <% end %>
-          <% if category.category=="WhiteGoods" %>
-           <%= link_to 'Show', :action => "whitegoods" %> 
-          <% end %>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,7 +40,6 @@
 </div>
 
 <h1>Manage Database</h1>
-  <%= link_to 'View Complete Product Listing', :action => "complete" %><br>
   <%= link_to 'New Product', new_product_path %>
   <br>
   <h2>File Upload</h2>

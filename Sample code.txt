@@ -77,3 +77,14 @@ Half working
     <%= submit_tag "Up Load" %>
     </div>
 <% end %>
+
+<%=  case category.category
+          when "Audio"
+            link_to 'Show', :action => "complete"
+          when "Cameras"
+           link_to 'Show', :action => "complete"
+          when "Computers and Tablets"
+           link_to 'Show', :action => "complete"
+          when "WhiteGoods"
+            link_to 'Show', :action => "complete"
+           %>

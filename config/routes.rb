@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-
- # get 'upload/uploadfile'
- # post 'upload/import'
- #post 'products/uploadfile'
+  get 'products/complete'
+    get 'products/audio'
+     get 'products/cameras'
+       get 'products/computers'
+          get 'products/computersoffset'
+             get 'products/whitegoods'
+          
+ 
 
   resources :products do
     collection { post :import }
