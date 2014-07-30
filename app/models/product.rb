@@ -10,7 +10,8 @@ class Product < ActiveRecord::Base
 	validates :product_name, :uniqueness => true
 
 
-	def self.import(file)
+	# Purging data before importing fresh data from csv file --Apurva	
+	def self.import(file)							
 	 	Product.delete_all
 		CSV.foreach(file.path, headers: true) do |row|
 	    Product.create!(row.to_hash)

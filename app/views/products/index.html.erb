@@ -49,9 +49,9 @@
   <%= link_to 'View Complete Product Listing', :action => "complete" %><br>
   <%= link_to 'New Product', new_product_path %>
   <br>
-  <h2>File Upload</h2>
+  <h2>File Upload</h2> <!--File Upload form-->
     <%= form_tag import_products_path, multipart: true do %>
-      <p> File to Upload:<%= file_field_tag :file %></p>
+      <p> File to Upload:<%= file_field_tag :file,  :accept => 'text/csv' %></p>
       <%= submit_tag "Import CSV" %>
 <% end %>
 
