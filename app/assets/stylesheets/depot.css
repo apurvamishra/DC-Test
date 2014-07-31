@@ -45,8 +45,10 @@
 }
 
 #product_list p {
+  font-size:    large;
   text-align:   center;
   border-bottom:2px solid;
+  padding-bottom: 1em;
   color:        #282;
 }
 

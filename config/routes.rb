@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'products/computers'
   get 'products/computersoffset'
   get 'products/whitegoods'
+  get 'products/start'
      
   #resources :products
   resources :products do

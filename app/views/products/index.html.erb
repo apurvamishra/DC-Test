@@ -5,12 +5,11 @@
 
 <div id="product_list" >
 
-  <h1>Product Listing</h1>
+  <h1>Product Categories</h1>
 
   <table>
     <thead>
       <tr>
-        <th>Category</th>
         <th></th>
         <th></th>
         <th colspan="6"></th>
@@ -22,16 +21,16 @@
         <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
           <td class="index">
             <% if category.category=="Audio" %>
-             <%= link_to category.category, :action => "audio" %> 
+             <%= link_to category.category, action: "audio" %> 
             <% end %>
             <% if category.category=="Cameras" %>
-             <%= link_to category.category, :action => "cameras" %> 
+             <%= link_to category.category, action: "cameras" %> 
             <% end %>
             <% if category.category=="Computers and Tablets" %>
-             <%= link_to category.category, :action => "computers" %> 
+             <%= link_to category.category, action: "computers" %> 
             <% end %>
             <% if category.category=="WhiteGoods" %>
-             <%= link_to category.category, :action => "whitegoods" %> 
+             <%= link_to category.category, action: "whitegoods" %> 
             <% end %>
           </td>
           <td></td>
@@ -47,14 +46,11 @@
 </div>
 
 <h1>Manage Database</h1>
-  <%= link_to 'View Complete Product Listing', :action => "complete" %><br>
+  <%= link_to 'File Upload', action: "start" %><br>
+  <%= link_to 'View Complete Product Listing', action: "complete" %><br>
   <%= link_to 'New Product', new_product_path %><br>
   
-<h2>File Upload</h2> <!--File Upload form-->
-    <%= form_tag import_products_path, multipart: true do %>
-      <p> File to Upload:<%= file_field_tag :file,  :accept => 'text/csv' %></p>
-      <%= submit_tag "Import CSV" %>
-    <% end %>
+
 
 <!--Comfirmation / Failure popup's-->
 <% if flash[:notice] %>

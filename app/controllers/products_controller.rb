@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   def import
     begin
       Product.import(params[:file])
-      redirect_to root_url, notice: "Product data successfully uploaded"
+      redirect_to root_url, notice: "Import Complete"
     rescue
       redirect_to root_url, notice: "Invalid CSV file format, purging data"
     end

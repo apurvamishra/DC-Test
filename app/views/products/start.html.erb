@@ -1,0 +1,17 @@
+<h1>File Upload</h1> <!--File Upload form-->
+    <%= form_tag import_products_path, multipart: true do %>
+      <p> File to Upload:<%= file_field_tag :file,  :accept => 'text/csv' %></p>
+      <%= submit_tag "Trigger Import" %>
+    <% end %>
+<br>
+
+<%= link_to 'Home', root_url %> | 
+<%= link_to 'Back', :back %>
+
+<!--Comfirmation / Failure popup's-->
+<% if flash[:notice] %>
+  <script language="JavaScript">
+   alert("<%= flash[:notice] %>");
+  </script>
+<% end %>
+
