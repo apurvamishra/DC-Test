@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-  get 'products/complete'
-    get 'products/audio'
-     get 'products/cameras'
-       get 'products/computers'
-          get 'products/computersoffset'
-             get 'products/whitegoods'
-          
  
-
+  #routes for auxilary pages
+  get 'products/complete'
+  get 'products/audio'
+  get 'products/cameras'
+  get 'products/computers'
+  get 'products/computersoffset'
+  get 'products/whitegoods'
+     
+  #resources :products
   resources :products do
     collection { post :import }
   end
-  #resources :products
- 
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

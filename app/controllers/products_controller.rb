@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   
-
   # GET /products
   # GET /products.json
   def index
@@ -9,9 +8,9 @@ class ProductsController < ApplicationController
     @category = Product.select(:category).distinct
    end
 
-   #Complete product listing
-   def complete
-    @products = Product.all
+  #Complete product listing
+  def complete
+    @complete = Product.all
   end
 
   # Audio Product listing
@@ -24,7 +23,7 @@ class ProductsController < ApplicationController
     @cameras = Product.where('category'=> 'Cameras')
   end
 
- # Cameras Product listing first 5
+  # Cameras Product listing first 5
   def computers
     @computers = Product.where('category'=> 'Computers and Tablets').limit(5)
   end
@@ -76,30 +75,6 @@ class ProductsController < ApplicationController
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
-  def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /products/1
-  # DELETE /products/1.json
-  def destroy
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

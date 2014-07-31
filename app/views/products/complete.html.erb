@@ -19,16 +19,16 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @complete.each do |complete| %>
       <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        <td><%= product.productID %></td>
-        <td><%= product.category %></td>
-        <td><%= product.product_name %></td>
-        <td><%= product.price %></td>
+        <td><%= complete.productID %></td>
+        <td><%= complete.category %></td>
+        <td><%= complete.product_name %></td>
+        <td><%= complete.price %></td>
         <td class="list_actions" >
-        <%= link_to 'Show', product %>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'Show', complete %>
+        <%= link_to 'Edit', edit_product_path(complete) %>
+        <%= link_to 'Destroy', complete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
