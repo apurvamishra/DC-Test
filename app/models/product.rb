@@ -1,4 +1,4 @@
- #This class provides a complete interface to CSV files and data
+require 'csv' #This class provides a complete interface to CSV files and data
 
 class Product < ActiveRecord::Base
 	
