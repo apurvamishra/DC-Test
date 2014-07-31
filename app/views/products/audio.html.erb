@@ -23,10 +23,8 @@
         <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
           <td><%= audio.productID %></td>
           <td><%= audio.category %></td>
-          <td><%= audio.product_name %></td>
-          <td></td>
+          <td><%= link_to audio.product_name, audio %></td>
           <td class="list_actions" >
-          <%= link_to 'Show', audio %>
           <%= link_to 'Edit', edit_product_path(audio) %>
           </td>
         </tr>

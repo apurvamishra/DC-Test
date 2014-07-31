@@ -23,10 +23,8 @@
         <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
           <td><%= whitegoods.productID %></td>
           <td><%= whitegoods.category %></td>
-          <td><%= whitegoods.product_name %></td>
-          <td></td>
+          <td><%= link_to whitegoods.product_name, whitegoods %></td>
           <td class="list_actions" >
-          <%= link_to 'Show', whitegoods %>
           <%= link_to 'Edit', edit_product_path(whitegoods) %>
           </td>
         </tr>
