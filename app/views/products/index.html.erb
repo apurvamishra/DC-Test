@@ -5,41 +5,44 @@
 
 <div id="product_list" >
 
-<h1>Product Listing</h1>
+  <h1>Product Listing</h1>
 
-<table>
-  <thead>
-    <tr>
-      
-      <th>Category</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @category.each do |category| %>
-      <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        
-        <td><%= category.category %></td>
-        
-        <td class="list_actions" >
-          <% if category.category=="Audio" %>
-           <%= link_to 'Show', :action => "audio" %> 
-          <% end %>
-          <% if category.category=="Cameras" %>
-           <%= link_to 'Show', :action => "cameras" %> 
-          <% end %>
-          <% if category.category=="Computers and Tablets" %>
-           <%= link_to 'Show', :action => "computers" %> 
-          <% end %>
-          <% if category.category=="WhiteGoods" %>
-           <%= link_to 'Show', :action => "whitegoods" %> 
-          <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th></th>
+        <th></th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+
+    <tbody>
+      <% @category.each do |category| %>
+        <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
+          <td class="index">
+            <% if category.category=="Audio" %>
+             <%= link_to category.category, :action => "audio" %> 
+            <% end %>
+            <% if category.category=="Cameras" %>
+             <%= link_to category.category, :action => "cameras" %> 
+            <% end %>
+            <% if category.category=="Computers and Tablets" %>
+             <%= link_to category.category, :action => "computers" %> 
+            <% end %>
+            <% if category.category=="WhiteGoods" %>
+             <%= link_to category.category, :action => "whitegoods" %> 
+            <% end %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
   <p> </p>
 </div>
 
