@@ -114,3 +114,7 @@ products controller
       format.json { head :no_content }
     end
   end
+
+  removing destroy from views
+
+  <%= link_to 'Destroy', cameras, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -39,10 +39,8 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<p> </p>
+  <p> </p>
 </div>
 
 <h1>Manage Database</h1>
@@ -52,7 +50,7 @@
   <h2>File Upload</h2> <!--File Upload form-->
     <%= form_tag import_products_path, multipart: true do %>
       <p> File to Upload:<%= file_field_tag :file,  :accept => 'text/csv' %></p>
-      <%= submit_tag "Import CSV" %>
+    <%= submit_tag "Import CSV" %>
 <% end %>
 
 <!--Comfirmation / Failure popup's-->
