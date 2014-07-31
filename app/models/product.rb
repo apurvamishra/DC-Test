@@ -12,10 +12,10 @@ class Product < ActiveRecord::Base
   # Purging data before importing fresh data from csv file
   def self.import(file)							
     Product.delete_all
-	  CSV.foreach(file.path, headers: true) do |row|
+	CSV.foreach(file.path, headers: true) do |row|
 	  Product.create!(row.to_hash)
-	  end
 	end
+  end
 end
 
     
