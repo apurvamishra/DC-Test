@@ -1,4 +1,5 @@
-require 'csv' #This class provides a complete interface to CSV files and data
+# This class provides a complete interface to CSV files and data
+require 'csv' 
 
 class Product < ActiveRecord::Base 
   # Products in Alphabetical order of category, second level ordering by name
@@ -8,7 +9,7 @@ class Product < ActiveRecord::Base
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :product_name, :uniqueness => true
 
-  # Purging data before importing fresh data from csv file --Apurva	
+  # Purging data before importing fresh data from csv file
   def self.import(file)							
     Product.delete_all
 	  CSV.foreach(file.path, headers: true) do |row|

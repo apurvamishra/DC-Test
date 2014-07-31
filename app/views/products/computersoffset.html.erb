@@ -5,35 +5,35 @@
 
 <div id="product_list" >
 
-<h1>Product Listing</h1>
+  <h1>Product Listing</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Product ID</th>
-      <th>Category</th>
-      <th>Product Name</th>
-      <th></th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @computersoffset.each do |computersoffset| %>
-      <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        <td><%= computersoffset.productID %></td>
-        <td><%= computersoffset.category %></td>
-        <td><%= computersoffset.product_name %></td>
-        <td></td>
-        <td class="list_actions" >
-        <%= link_to 'Show', computersoffset %>
-        <%= link_to 'Edit', edit_product_path(computersoffset) %>
-        </td>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Category</th>
+        <th>Product Name</th>
+        <th></th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+
+    <tbody>
+      <% @computersoffset.each do |computersoffset| %>
+        <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
+          <td><%= computersoffset.productID %></td>
+          <td><%= computersoffset.category %></td>
+          <td><%= computersoffset.product_name %></td>
+          <td></td>
+          <td class="list_actions" >
+          <%= link_to 'Show', computersoffset %>
+          <%= link_to 'Edit', edit_product_path(computersoffset) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
   <p> <%= link_to 'Page 1', :action => "computers" %> </p>
 </div>
 

@@ -5,34 +5,34 @@
 
 <div id="product_list" >
 
-<h1>Product Listing</h1>
+  <h1>Product Listing</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Product ID</th>
-      <th>Category</th>
-      <th>Product Name</th>
-      <th>Price</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @complete.each do |complete| %>
-      <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        <td><%= complete.productID %></td>
-        <td><%= complete.category %></td>
-        <td><%= complete.product_name %></td>
-        <td><%= complete.price %></td>
-        <td class="list_actions" >
-        <%= link_to 'Show', complete %>
-        </td>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Category</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+
+    <tbody>
+      <% @complete.each do |complete| %>
+        <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
+          <td><%= complete.productID %></td>
+          <td><%= complete.category %></td>
+          <td><%= complete.product_name %></td>
+          <td><%= complete.price %></td>
+          <td class="list_actions" >
+          <%= link_to 'Show', complete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
   <p> </p>
 </div>
 

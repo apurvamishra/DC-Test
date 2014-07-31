@@ -1,5 +1,4 @@
 /* Global styles */
-
 #banner {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -7,8 +6,8 @@
         color: #282;
         text-align: center;
 }
-/* Styles for products/index */
 
+/* Styles for products/index */
 #product_list table {
         border-collapse: collapse;
 

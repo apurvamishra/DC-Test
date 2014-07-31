@@ -5,35 +5,35 @@
 
 <div id="product_list" >
 
-<h1>Product Listing</h1>
+  <h1>Product Listing</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Product ID</th>
-      <th>Category</th>
-      <th>Product Name</th>
-      <th></th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @whitegoods.each do |whitegoods| %>
-      <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
-        <td><%= whitegoods.productID %></td>
-        <td><%= whitegoods.category %></td>
-        <td><%= whitegoods.product_name %></td>
-        <td></td>
-        <td class="list_actions" >
-        <%= link_to 'Show', whitegoods %>
-        <%= link_to 'Edit', edit_product_path(whitegoods) %>
-        </td>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Category</th>
+        <th>Product Name</th>
+        <th></th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+
+    <tbody>
+      <% @whitegoods.each do |whitegoods| %>
+        <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
+          <td><%= whitegoods.productID %></td>
+          <td><%= whitegoods.category %></td>
+          <td><%= whitegoods.product_name %></td>
+          <td></td>
+          <td class="list_actions" >
+          <%= link_to 'Show', whitegoods %>
+          <%= link_to 'Edit', edit_product_path(whitegoods) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
   <p> </p>
 </div>
 
